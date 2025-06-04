@@ -108,11 +108,15 @@ $hotels = [
 
                     // Bonus
 
+                    // parking logic
+
                     $isParking = false;
 
                     if (isset($_GET["parking"]) && $_GET["parking"] == "on") {
                         $isParking = true;
                     }
+
+                    // stars logic
 
                     $minVote = 0;
 
