@@ -72,16 +72,20 @@ $hotels = [
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="">
-                        <td scope="row">R1C1</td>
-                        <td>R1C2</td>
-                        <td>R1C3</td>
-                    </tr>
-                    <tr class="">
-                        <td scope="row">Item</td>
-                        <td>Item</td>
-                        <td>Item</td>
-                    </tr>
+                    <?php
+
+                    foreach ($hotels as $hotel) {
+
+                    ?>
+
+                        <tr class="">
+                            <td scope="row"><?php echo $hotel["name"]; ?></td>
+                        </tr>
+
+                    <?php
+                    };
+                    ?>
+
                 </tbody>
             </table>
         </div>
