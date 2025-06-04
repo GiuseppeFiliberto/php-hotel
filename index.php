@@ -84,8 +84,8 @@ $hotels = [
                             <td scope="row">
                                 <?php echo $hotel["parking"] ? "Yes" : "No"; ?>
                             </td>
-                            <td scope="row"><?php echo $hotel["vote"]; ?></td>
-                            <td scope="row"><?php echo $hotel["distance_to_center"]; ?></td>
+                            <td scope="row"><?php echo $hotel["vote"] . " stars"; ?></td>
+                            <td scope="row"><?php echo $hotel["distance_to_center"] . " Km"; ?></td>
 
                         </tr>
 
