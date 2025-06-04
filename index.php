@@ -72,8 +72,8 @@ $hotels = [
             </div>
 
             <!-- Stars Filter -->
-            <select class="form-select" aria-label="Default select example">
-                <option selected disabled>Stars</option>
+            <select class="form-select" aria-label="Default select example" id="minVote" name="minVote">
+                <option selected disabled>Select Stars</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -114,15 +114,25 @@ $hotels = [
                         $isParking = true;
                     }
 
+                    $minVote = 0;
+
+                    if (isset($_GET["minVote"])) {
+                        $minVote = intval($_GET["minVote"]);
+                    }
+
+
                     foreach ($hotels as $hotel) {
 
                         if ($isParking) {
 
                             if (!$hotel["parking"]) {
-                                break;
+                                continue;
                             }
                         }
 
+                        if ($minVote > 0 && $hotel["vote"] < $minVote) {
+                            continue;
+                        }
                     ?>
 
                         <tr class="">
