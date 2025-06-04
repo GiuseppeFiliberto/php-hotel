@@ -68,7 +68,7 @@ $hotels = [
                         <th scope="col">Description</th>
                         <th scope="col">Parking</th>
                         <th scope="col">Vote</th>
-                        <th scope="col">Distance from Center</th>
+                        <th scope="col">Distance to Center</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -80,6 +80,11 @@ $hotels = [
 
                         <tr class="">
                             <td scope="row"><?php echo $hotel["name"]; ?></td>
+                            <td scope="row"><?php echo $hotel["description"]; ?></td>
+                            <td scope="row"><?php echo $hotel["parking"]; ?></td>
+                            <td scope="row"><?php echo $hotel["vote"]; ?></td>
+                            <td scope="row"><?php echo $hotel["distance_to_center"]; ?></td>
+
                         </tr>
 
                     <?php
