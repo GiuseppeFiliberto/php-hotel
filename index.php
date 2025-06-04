@@ -55,8 +55,40 @@ $hotels = [
 
 <body>
 
-    <div class="container">
-        <h1 class="mt-3"> Hotels List</h1>
+    <div class="container-fluid">
+
+
+        <h1 class="my-3"> Hotels List</h1>
+
+        <h3>Filters</h3>
+
+        <form action="" method="get">
+            <!-- Parking Filter -->
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="parking" name="parking">
+                <label class="form-check-label" for="parking">
+                    With Parking
+                </label>
+            </div>
+
+            <!-- Stars Filter -->
+            <select class="form-select" aria-label="Default select example">
+                <option selected disabled>Stars</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+
+            </select>
+
+            <button
+                class="btn btn-primary">
+                Go
+            </button>
+
+        </form>
+
 
         <div
             class="table-responsive">
@@ -74,7 +106,22 @@ $hotels = [
                 <tbody>
                     <?php
 
+                    // Bonus
+
+                    $isParking = false;
+
+                    if (isset($_GET["parking"]) && $_GET["parking"] == "on") {
+                        $isParking = true;
+                    }
+
                     foreach ($hotels as $hotel) {
+
+                        if ($isParking) {
+
+                            if (!$hotel["parking"]) {
+                                break;
+                            }
+                        }
 
                     ?>
 
