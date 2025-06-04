@@ -50,6 +50,12 @@ $hotels = [
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
 
+    <style>
+        #minVote {
+            width: 9em;
+        }
+    </style>
+
     <title>PHP Hotels</title>
 </head>
 
@@ -58,11 +64,11 @@ $hotels = [
     <div class="container-fluid">
 
 
-        <h1 class="my-3"> Hotels List</h1>
+        <h1 class="my-3 fw-bold"> Hotels List</h1>
 
         <h3>Filters</h3>
 
-        <form action="" method="get">
+        <form action="" method="get" class="d-flex gap-3 align-items-center mb-3">
             <!-- Parking Filter -->
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="parking" name="parking">
@@ -84,7 +90,7 @@ $hotels = [
 
             <button
                 class="btn btn-primary">
-                Go
+                Search
             </button>
 
         </form>
